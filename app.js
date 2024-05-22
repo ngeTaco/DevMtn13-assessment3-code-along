@@ -63,7 +63,11 @@ const OTHER_FOSSILS = [
 // TODO: Replace this comment with your code
 
 app.get('/', (req, res) => {
-  res.render('homepage.html.njk')
+  if (req.session.name) {
+    res.redirect('/top-fossils')
+  } else {
+    res.render('homepage.html.njk')
+  }
 })
 
 app.get('/get-name', (req, res) => {
@@ -78,7 +82,11 @@ app.get('/random-fossil.json', (req, res) => {
 });
 
 app.get('/top-fossils', (req, res) => {
-  res.render('top-fossils.html.njk', { fossils: MOST_LIKED_FOSSILS, username: req.session.name })
+  if (!req.session.name) {
+    res.redirect('/')
+  } else {
+    res.render('top-fossils.html.njk', { fossils: MOST_LIKED_FOSSILS, username: req.session.name })
+  }
 })
 
 ViteExpress.listen(app, port, () => {
