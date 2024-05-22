@@ -1,0 +1,24 @@
+{
+  "name": "wb-assess-3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon app.js -w app.js -w src -w public -w views -e html,css,js --delay 2.5",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.3.9",
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "lodash": "^4.17.21",
+    "morgan": "^1.10.0",
+    "nunjucks": "^3.2.4",
+    "vite-express": "^0.9.1"
+  }
+}
