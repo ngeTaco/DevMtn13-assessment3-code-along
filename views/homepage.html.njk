@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Most Liked Fossils</title>
-  </head>
-  <body>
+{% extends 'base.html.njk' %}
+
+{% block title %}Most Liked Fossils{% endblock %}
+
+{% block body %}
     <h1>Most Liked Fossils</h1>
 
     <form action="/get-name">
@@ -25,5 +21,4 @@
     <p id="random-fossil-name"></p>
 
     <script type="module" src="../src/random-fossil.js"></script>
-  </body>
-</html>
+{% endblock %}
