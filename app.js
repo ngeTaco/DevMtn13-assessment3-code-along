@@ -76,7 +76,7 @@ app.get('/get-name', (req, res) => {
   res.redirect('/top-fossils')
 })
 
-app.get('/random-fossil.json', (req, res) => {
+app.get('/random-fossil', (req, res) => {
   const randomFossil = lodash.sample(OTHER_FOSSILS);
   res.json(randomFossil);
 });
