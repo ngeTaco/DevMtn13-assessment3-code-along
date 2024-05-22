@@ -8,9 +8,12 @@
   </head>
   <body>
     <div class="fossil-div">
-      <h3>{{ fossils[0].name }}</h3>
-      <h2>Liked {{ fossils[0].num_likes }} times.</h2>
-      <img src="{{ fossils[0].img }}" />
+      {% for fossilKey, fossilValue in fossils %}
+        <h3>{{ fossilValue.name }}</h3>
+        <h2>Liked {{ fossilValue.num_likes }} times.</h2>
+        <img src="{{ fossilValue.img }}" />
+
+      {% endfor %}
     </div>
   </body>
 </html>

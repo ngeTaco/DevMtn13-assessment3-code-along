@@ -67,6 +67,10 @@ app.get('/random-fossil.json', (req, res) => {
   res.json(randomFossil);
 });
 
+app.get('/top-fossils', (req, res) => {
+  res.render('top-fossils.html.njk', { fossils: MOST_LIKED_FOSSILS })
+})
+
 ViteExpress.listen(app, port, () => {
   console.log(`Server running on http://localhost:${port}...`);
 });
