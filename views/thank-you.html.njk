@@ -1,1 +1,9 @@
-<!-- This has been left intentionally empty -->
+{% extend 'base.html.njk' %}
+
+{% block title %}Thank You{% endblock %}
+
+{% block body %}
+<h1>Thank You {{ username }}</h1>
+
+<a href="/top-fossils">Click here to go back to Top Fossils</a>
+{%endblock%}

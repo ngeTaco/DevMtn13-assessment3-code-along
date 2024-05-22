@@ -89,6 +89,12 @@ app.get('/top-fossils', (req, res) => {
   }
 })
 
+app.post('/like-fossil', (req, res) => {
+  MOST_LIKED_FOSSILS[req.body.liked].num_likes ++
+
+  res.render('thank-you.html.njk', { username: req.session.name })
+})
+
 ViteExpress.listen(app, port, () => {
   console.log(`Server running on http://localhost:${port}...`);
 });

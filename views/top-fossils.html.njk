@@ -8,12 +8,20 @@
   </head>
   <body>
     <h1>Welcome, {{ username }}</h1>
+    <form action="/like-fossil" method="post">
+      <p>Choose a fossil to like!</p>
+      <select name="liked">
+        {% for fossilKey, fossilValue in fossils %}
+         <option value={{ fossilKey}}>{{ fossilValue.name }}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" />
+    </form>
     <div class="fossil-div">
       {% for fossilKey, fossilValue in fossils %}
         <h3>{{ username }}, this is a {{ fossilValue.name }}</h3>
         <h2>Liked {{ fossilValue.num_likes }} times.</h2>
         <img src="{{ fossilValue.img }}" />
-
       {% endfor %}
     </div>
   </body>
